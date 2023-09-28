@@ -8,6 +8,7 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 import axios from "axios";
+
 import ScrollableChat from "./ScrollableChat";
 import Lottie from "react-lottie";
 import animationData from "../animations/typing.json";
