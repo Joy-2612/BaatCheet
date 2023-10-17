@@ -21,7 +21,7 @@ function Homepage() {
   return (
     <div className="container">
       <div className="header">
-        <h1 className="baat">Baat</h1><h1 className="cheet">Cheet</h1>
+        <h1 className="baat">Chat</h1><h1 className="cheet">Sync</h1>
       </div>
       <div className="content">
         <div className="tabs-container">

@@ -152,8 +152,8 @@ function SideDrawer() {
           </Button>
         </Tooltip>
         <Text className="font" display="flex" fontSize="30px">
-          <Text color="#00c23e">Baat</Text>
-          <Text color="#1a85ff">Cheet</Text>
+          <Text color="#00c23e">Chat</Text>
+          <Text color="#1a85ff">Sync</Text>
         </Text>
         <div>
           <Menu>
