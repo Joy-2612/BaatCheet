@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import Login from "../components/Authentication/Login";
 import Signup from "../components/Authentication/Signup";
-import '../styles/HomePage.css'
+import "../styles/HomePage.css";
 
 function Homepage() {
   const history = useHistory();
@@ -21,7 +21,8 @@ function Homepage() {
   return (
     <div className="container">
       <div className="header">
-        <h1 className="baat">Chat</h1><h1 className="cheet">Sync</h1>
+        <h1 className="baat">Chat</h1>
+        <h1 className="cheet">Sync</h1>
       </div>
       <div className="content">
         <div className="tabs-container">

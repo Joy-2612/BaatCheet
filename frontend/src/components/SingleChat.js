@@ -25,11 +25,10 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import Chatty from "./Chatty";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import RoomPage from "./RoomPage";
-import {FiVideo} from 'react-icons/fi';
-import {FiPhoneCall} from 'react-icons/fi';
-const ENDPOINT = "http://localhost:5000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
+import { FiVideo } from "react-icons/fi";
+import { FiPhoneCall } from "react-icons/fi";
+const ENDPOINT = "https://chatsync.onrender.com";
 var socket, selectedChatCompare;
-
 
 function SingleChat({ fetchAgain, setFetchAgain }) {
   const [messages, setMessages] = useState([]);
@@ -112,36 +111,33 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
   //   history.push(`/room`, propstopass);
   // },[history,selectedChat]);
 
-
   const handleJoinRoomvideo = useCallback(() => {
     const propsToPass = {
-      chat:selectedChat,
+      chat: selectedChat,
       chatId: selectedChat._id,
       userId: user._id,
       username: user.name,
-      voice:false,
+      voice: false,
     };
     history.push({
       pathname: "/room",
       state: propsToPass,
     });
   }, [history, selectedChat, user]);
-
 
   const handleJoinRoomvoice = useCallback(() => {
     const propsToPass = {
-      chat:selectedChat,
+      chat: selectedChat,
       chatId: selectedChat._id,
       userId: user._id,
       username: user.name,
-      voice:true,
+      voice: true,
     };
     history.push({
       pathname: "/room",
       state: propsToPass,
     });
   }, [history, selectedChat, user]);
-
 
   const handleSendMessage = async () => {
     if (newMessage) {
@@ -259,10 +255,14 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                       {getSender(user, selectedChat.users)}
                     </div>
                   </div>
-                    <div className="call-button-one">
-                      <button onClick={handleJoinRoomvideo}><FiVideo/></button>
-                      <button onClick={handleJoinRoomvoice}><FiPhoneCall/></button>
-                    </div>
+                  <div className="call-button-one">
+                    <button onClick={handleJoinRoomvideo}>
+                      <FiVideo />
+                    </button>
+                    <button onClick={handleJoinRoomvoice}>
+                      <FiPhoneCall />
+                    </button>
+                  </div>
                 </>
               ) : (
                 <>
@@ -283,13 +283,17 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                     <div className="group-name">{selectedChat.chatName}</div>
                   </div>
                   <div className="call-button-group">
-                  <button onClick={handleJoinRoomvideo}><FiVideo/></button>
-                  <button onClick={handleJoinRoomvoice}><FiPhoneCall/></button>
-                  <UpdateGroupChatModal
-                    fetchMessages={fetchMessages}
-                    fetchAgain={fetchAgain}
-                    setFetchAgain={setFetchAgain}
-                  />
+                    <button onClick={handleJoinRoomvideo}>
+                      <FiVideo />
+                    </button>
+                    <button onClick={handleJoinRoomvoice}>
+                      <FiPhoneCall />
+                    </button>
+                    <UpdateGroupChatModal
+                      fetchMessages={fetchMessages}
+                      fetchAgain={fetchAgain}
+                      setFetchAgain={setFetchAgain}
+                    />
                   </div>
                 </>
               ))}
@@ -303,23 +307,22 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
               </div>
             )}
             {istyping ? (
-                <div className="typing-indicator">
-                  <SlideFade in={istyping} transitionDuration="500ms">
-                    <Lottie
-                      options={defaultOptions}
-                      style={{
-                        marginBottom: "15px",
-                        color: "blue",
-                        marginLeft: "0",
-                      }}
-                    />
-                  </SlideFade>
-                </div>
-              ) : (
-                <></>
-              )}
+              <div className="typing-indicator">
+                <SlideFade in={istyping} transitionDuration="500ms">
+                  <Lottie
+                    options={defaultOptions}
+                    style={{
+                      marginBottom: "15px",
+                      color: "blue",
+                      marginLeft: "0",
+                    }}
+                  />
+                </SlideFade>
+              </div>
+            ) : (
+              <></>
+            )}
             <div className="message-input-container">
-              
               <div className="input-with-send-icon">
                 <input
                   className="message-input"

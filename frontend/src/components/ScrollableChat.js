@@ -39,7 +39,7 @@ const ScrollableChat = ({ messages }) => {
                 marginTop: isSameUser(messages, m, i, user._id) ? 3 : 10,
                 borderRadius: "10px",
                 padding: "5px 15px",
-                maxWidth: "75%",
+                maxWidth: "55%",
               }}
             >
               {m.content}
