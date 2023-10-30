@@ -27,7 +27,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import RoomPage from "./RoomPage";
 import { FiVideo } from "react-icons/fi";
 import { FiPhoneCall } from "react-icons/fi";
-const ENDPOINT = "https://chatsync.onrender.com";
+const ENDPOINT = "https://chatsync.onrender.com/";
 var socket, selectedChatCompare;
 
 function SingleChat({ fetchAgain, setFetchAgain }) {
@@ -38,8 +38,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
   const [typing, setTyping] = useState(false);
   const [istyping, setIsTyping] = useState(false);
 
-  const { selectedChat, setSelectedChat, user, notification, setNotification } =
-    ChatState();
+  const { selectedChat, setSelectedChat, user, notification, setNotification } = ChatState();
 
   const defaultOptions = {
     loop: true,

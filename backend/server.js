@@ -8,7 +8,6 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require("path");
 const cors = require("cors");
 
-
 dotenv.config();
 connectDB();
 const app = express();
@@ -91,5 +90,9 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("USER DISCONNECTED");
     socket.leave(socket.id);
+  });
+
+  socket.on("logout", () => {
+    console.log("USER DISCONNECTED");
   });
 });

@@ -20,7 +20,7 @@ import { Tooltip } from "@chakra-ui/tooltip";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Avatar } from "@chakra-ui/avatar";
 import { useHistory } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCallback } from "react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/toast";
@@ -53,9 +53,15 @@ function SideDrawer() {
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const history = useHistory();
+  var socket;
+
+  useEffect(() => {
+    socket = io(ENDPOINT);
+  });
 
   const logoutHandler = () => {
     localStorage.removeItem("userInfo");
+    socket.emit("logout");
     history.push("/");
   };
 
