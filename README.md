@@ -1,6 +1,6 @@
-# BaatCheet
+# ChatSync
 
-BaatCheet is a Full Stack Chatting App with an exceptional user interface. It offers seamless real-time communication, including video and voice call features. User details are stored securely in an encrypted format within a MongoDB database for data privacy and security.
+ChatSync is a Full Stack Chatting App with an exceptional user interface. It offers seamless real-time communication, including video and voice call features. User details are stored securely in an encrypted format within a MongoDB database for data privacy and security.
 
 - Demo : <https://baatcheet-y4fp.onrender.com>
 - Documentation : <https://docs.google.com/document/d/1DewDKPIYFZrxlk0SFD0hgJ0CGntnVOspZZJH4oOd1CU/edit?usp=sharing>
